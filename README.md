@@ -1,10 +1,10 @@
 # FreePhish
-Repository for ACM IMC 2023 paper - "Phishing in the Free Waters: A Study of Phishing Attacks Created using Free Website Building Services" <paper-link>
+## Repository for ACM IMC 2023 paper - "Phishing in the Free Waters: A Study of Phishing Attacks Created using Free Website Building Services" <paper-link>
 
 ## This README has the following instructions:
 
-### Running the FreePhish web extension on your Chromium browser.
-### Running the FreePhish framework on your local machine.
+### 1) Running the FreePhish web extension on your Chromium browser.
+### 2) Running the FreePhish framework on your local machine.
 
 ## How to Load an the FreePhish Web extension into your Chromium-based Browser.
 
