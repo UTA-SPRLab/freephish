@@ -6,7 +6,7 @@
 ### 1) Running the FreePhish web extension on your Chromium browser.
 ### 2) Running the FreePhish framework on your local machine.
 
-## How to Load an the FreePhish Web extension into your Chromium-based Browser.
+## How to Load the FreePhish Web extension into your Chromium-based Browser.
 
 Note: You need to use a Chromium based browser (eg. Google Chrome, Microsoft Edge, Brave Browser etc.). This extension is not supported on Mozilla Firefox or Safari.
 
@@ -37,7 +37,7 @@ FreePhish should now be loaded into the browser, and its icon will typically app
 
 For more information about these attacks please check our ACM IMC 2023 paper - <add link>
 
-Here is a demo of FreePhish running on Brave Browser:
+Here is a preview of FreePhish running on Brave Browser:
 
 ![Extension Preview](./extension_preview.gif)
 
