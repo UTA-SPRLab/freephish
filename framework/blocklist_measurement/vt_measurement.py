@@ -60,5 +60,5 @@ def run_virustotal(limit, filename):
                 with open(counter_file, 'w') as f:
                     f.write(str(i))
 
-                time.sleep(600)  # Wait 10 minutes
+                time.sleep(600)  
 

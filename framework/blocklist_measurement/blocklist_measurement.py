@@ -79,7 +79,7 @@ def check_urls(filename, temp_filename, loop=True, sleep_time=60):
         print("Checking URLs...")
 
         current_time = time.time()
-        if current_time - ecx_download_time >= 10 * 60:  # 10 minutes in seconds
+        if current_time - ecx_download_time >= 10 * 60:  
             download_ecx_file(temp_filename)  # Download the eCrimex file
             ecx_download_time = current_time
 
@@ -87,18 +87,18 @@ def check_urls(filename, temp_filename, loop=True, sleep_time=60):
             reader = csv.reader(file)
             header = next(reader)
             for row in reader:
-                url = row[0]  # Assuming URL is in the first column
+                url = row['url']  
                 check_phishtank(url)
                 check_ecx(url, temp_filename)
                 check_openphish(url)
                 check_gsb(url)
 
-        if current_time - start_time >= 3 * 60 * 60:  # 3 hours in seconds
+        if current_time - start_time >= 3 * 60 * 60:  
             print("Generating plot...")
             plot_data()
             start_time = current_time  # Update the start time for next interval
 
-        if not loop:  # If not running in a loop, break
+        if not loop:  
             break
 
         time.sleep(sleep_time)  # Sleep for a minute before the next iteration

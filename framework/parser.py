@@ -42,7 +42,6 @@ def web_parser():
     ]
 
 
-    # Create or open the CSV file and write the headers
     Path("parsed_metadata").mkdir(parents=True, exist_ok=True)  # create directory if doesn't exist
     with open('parsed_metadata/features.csv', 'w', newline='') as csvfile:
         fieldnames = ['id', 'url'] + feature_columns
@@ -72,28 +71,22 @@ def web_parser():
         except:
             features['ip_address'] = 0
             
-        # Suspicious symbols   
         features['symbol_at'] = url.count('@')
         features['symbol_dash'] = url.count('-')
         features['symbol_tilde'] = url.count('~')
         
-        # HTTPS 
         features['https'] = 1 if url.startswith('https') else 0
         
-        # URL length
         features['url_length'] = len(url)
         features['domain_length'] = len(tldextract.extract(url).domain)
         
-        # Dots in domain  
         dots = tldextract.extract(url).domain.count('.')
         features['dots_in_domain'] = dots
         
-        # Sensitive words
         sens_words = ['secure', 'account', 'webscr', 'login', 
                       'ebayisapi', 'signin', 'banking', 'confirm']
         features['sensitive_words'] = sum([url.count(w) for w in sens_words])
         
-        # Top level domain
         tld = tldextract.extract(url)
         features['tld_in_list'] = 1 if tld.suffix in tldextract.TLDS else 0
         features['tld_in_domain'] = tld.domain.count('.')
@@ -179,7 +172,6 @@ def web_parser():
         features['link_brand'] = 1 if url_brand == top_brand else 0
         features['top_brand_freq'] = brand_counts[top_brand]
         
-        # Internal vs external resources
         resources = ['link', 'img', 'script', 'noscript']
         for resource in resources:
             internal = len(re.findall(rf'<{resource} .*?>', html)) 

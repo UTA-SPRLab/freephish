@@ -22,7 +22,6 @@ def resolve_url(short_url):
         print(f"Error resolving URL {short_url}: {e}")
         return short_url  # return the original if it can't be resolved
 
-# Function wrapping the main execution code
 def get_twitter_posts():
     while True:
         with open('urls.csv', 'a', newline='') as master_csvfile:
@@ -39,13 +38,11 @@ def get_twitter_posts():
                 jsonl_filename = f"raw/results_{epoch_time}_{keyword}.jsonl"
                 csv_filename = f"raw/results_{epoch_time}_{keyword}.csv"
 
-                # Execute twarc2 search command
                 subprocess.run(["twarc2", "search", "--archive", f"url:{keyword}", jsonl_filename])
 
                 # Convert JSONL to CSV using twarc2 csv
                 subprocess.run(["twarc2", "csv", jsonl_filename, csv_filename])
 
-                # Read the CSV file
                 with open(csv_filename, 'r', newline='') as csvfile:
                     csvreader = csv.DictReader(csvfile)
                     for row in csvreader:
@@ -65,6 +62,6 @@ def get_twitter_posts():
                                 ])
 
         print("Sleeping for 10 minutes...")
-        time.sleep(600)  # sleep for 10 minutes
+        time.sleep(600)  
 
 

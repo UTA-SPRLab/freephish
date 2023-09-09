@@ -15,7 +15,6 @@ FWB_LIST = [
     'hpage', 'herokuapp', 'website.com', 'netlify'
 ]
 
-# Fetch posts from CrowdTangle
 def fetch_posts(api_url, token, query, count=100):
     params = {
         'token': token,
@@ -28,7 +27,6 @@ def fetch_posts(api_url, token, query, count=100):
     else:
         return None
 
-# Function wrapping the main execution code
 def get_fb_posts():
     while True:
         epoch_time = str(int(time.time()))
@@ -51,7 +49,7 @@ def get_fb_posts():
                         if link:
                             parsed_url = urlparse(link)
                             if any(kw in parsed_url.netloc for kw in FWB_LIST):
-                                # Write to CSV, including the URL
+                                
                                 csvwriter.writerow([
                                     'facebook',
                                     post_id,
@@ -63,5 +61,4 @@ def get_fb_posts():
                     print(f"Failed to retrieve data for keyword {keyword}")
         
         print("Sleeping for 10 minutes...")
-        time.sleep(600)  # sleep for 10 minutes
-
+        time.sleep(600)  

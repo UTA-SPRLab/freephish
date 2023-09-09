@@ -19,7 +19,6 @@ def run_module(fn, *args):
         with lock:
             logging.error(f"Failed to run {fn.__name__}: {e}")
 
-# List of function configurations
 functions_with_args = [
     (get_twitter.get_twitter_posts,),
     (get_fb.get_fb_posts,),
@@ -31,7 +30,6 @@ functions_with_args = [
     (disclosure_fwb.disclose_urls,)
 ]
 
-# Run all functions in parallel
 with ThreadPoolExecutor() as executor:
     for func_config in functions_with_args:
         executor.submit(run_module, *func_config)

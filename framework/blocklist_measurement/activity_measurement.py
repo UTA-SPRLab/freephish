@@ -45,5 +45,5 @@ def check_url_activity(filename):
             break
 
         print("Sleeping for 10 minutes...")
-        time.sleep(600)  # Sleep for 10 minutes
+        time.sleep(600)  
 
