@@ -43,6 +43,6 @@ Here is a demo of FreePhish running on Brave Browser:
 
 ## Running the FreePhish framework on your local machine.
 
-Detailed instructions comming soon.
+Detailed instructions coming soon.
 
 ![Framework](./framework.png)
