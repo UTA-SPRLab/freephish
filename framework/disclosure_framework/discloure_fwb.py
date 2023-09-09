@@ -27,7 +27,7 @@ def disclose_urls():
                 'hpage', 'herokuapp', 'website.com', 'netlify']
 
     # Read the URLs CSV file
-    df_urls = pd.read_csv('urls.csv')
+    df_urls = pd.read_csv('parsed_metadata/features.csv')
 
     # Filter URLs where status is 'active' and reported_to_domain is 'false'
     filtered_urls = df_urls[(df_urls['status'] == 'active') & (df_urls['reported_to_domain'] == 'false')]
@@ -48,7 +48,7 @@ def disclose_urls():
             df_urls.at[index, 'reported_to_domain'] = 'true'
 
     # Save the updated CSV back
-    df_urls.to_csv('urls.csv', index=False)
+    df_urls.to_csv('parsed_metadata/features.csv', index=False)
 
 # Call the function to execute the code
 if __name__ == "__main__":
