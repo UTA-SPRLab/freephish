@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "FreePhish",
-  "version": "1.2",
-  "description": "FreePhish phishing blocker",
+  "version": "1.5",
+  "description": "FreePhish Web Extension",
   "permissions": [
     "webRequest",
     "<all_urls>",
@@ -11,17 +11,17 @@
     "activeTab"
   ],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["js/background.js"],
     "persistent": true
   },
   "browser_action": {
-    "default_popup": "popup.html"
+    "default_popup": "html/popup.html"
   },
   "web_accessible_resources": [
-    "warning.svg"
+    "icons/warning.svg"
   ],
   "icons": {
-    "64": "icon64.png",
-    "128": "icon128.png"
+    "64": "icons/icon64.png",
+    "128": "icons/icon128.png"
   }
 }
