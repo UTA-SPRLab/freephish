@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "FreePhish",
-  "version": "1.5",
+  "version": "1.8",
   "description": "FreePhish Web Extension",
   "permissions": [
     "webRequest",

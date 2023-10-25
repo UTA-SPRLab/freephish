@@ -17,14 +17,14 @@ chrome.webRequest.onCompleted.addListener(
             ".weebly", ".000webhost", ".blogspot", ".wix", "sites.google",
             ".github.io", "firebase", ".squareup", "forms.zoho", ".wordpress",
             "forms.google", ".sharepoint", ".yolasite", ".godaddysite",
-            ".mailchimp", ".glitch.me", ".hpage", "webflow.io", "docs.google", "vercel.app", "web.app", "duckdns", "repl.co"
+            ".mailchimp", ".glitch.me", ".hpage", "webflow.io", "docs.google", "vercel.app", "web.app", "duckdns", "repl.co", "webador.com"
         ];
 
         const urlMatches = patterns.some(pattern => url.href.includes(pattern));
 
         if (urlMatches) {
             try {
-                const response = await fetch("http://freephish.org/check_url", {
+                const response = await fetch("http://194.195.214.91:5010/check_url", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
