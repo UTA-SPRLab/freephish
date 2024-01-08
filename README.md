@@ -41,6 +41,10 @@ Here is a preview of FreePhish running on Brave Browser:
 
 ![Extension Preview](./extension_preview.gif)
 
+## Framework overview
+
+![Framework](./framework.png)
+
 ## Experimental dataset
 
 We share the URL and screenshot of 1,293 URLs where the respective hosting domains have confirmed that they had been removed in the 'Dataset' folder.
