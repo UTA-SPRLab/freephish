@@ -24,7 +24,7 @@ chrome.webRequest.onCompleted.addListener(
 
         if (urlMatches) {
             try {
-                const response = await fetch("http://194.195.214.91:5010/check_url", {
+                const response = await fetch("http://isitphish.online/check_url", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
