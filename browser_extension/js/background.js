@@ -24,7 +24,7 @@ chrome.webRequest.onCompleted.addListener(
 
         if (urlMatches) {
             try {
-                const response = await fetch("http://isitphish.online/check_url", {
+                const response = await fetch("https://freephish.org/check_url", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
